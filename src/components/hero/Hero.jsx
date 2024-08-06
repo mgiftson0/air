@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import Header from '../header/Header';
-import { ComputerOutlined, CloudOutlined, SecurityOutlined, SupportOutlined, StarsOutlined } from '@mui/icons-material';
+import { ComputerOutlined, CloudOutlined, SecurityOutlined, SupportOutlined } from '@mui/icons-material';
 
 const Hero = () => {
   const services = [
@@ -23,25 +23,10 @@ const Hero = () => {
       </BackgroundCards>
       <HeroContentWrapper>
         <HeroContent>
-          <HeroTitle>Welcome to IT Firm</HeroTitle>
-          <HeroSubtitle>Innovative Solutions for Your Business</HeroSubtitle>
+          <HeroTitle>IT</HeroTitle>
+          <HeroSubtitle>something goes here</HeroSubtitle>
           <HeroButton>Learn More</HeroButton>
         </HeroContent>
-        <HeroImageWrapper>
-          <HeroImage size="large" top="20%" left="40%">
-            <CardContent>
-              <CardTitle>Our Mission</CardTitle>
-              <CardText>Delivering the best IT solutions to enhance your business productivity.</CardText>
-            </CardContent>
-          </HeroImage>
-          <HeroImage size="small" top="50%" left="60%">
-            <CardContent>
-              <StyledIcon as={StarsOutlined} />
-              <CardTitle>Why Choose Us?</CardTitle>
-              <CardText>Expertise, commitment, and innovative solutions to meet your IT needs.</CardText>
-            </CardContent>
-          </HeroImage>
-        </HeroImageWrapper>
       </HeroContentWrapper>
     </HeroWrapper>
   );
@@ -56,7 +41,7 @@ const float = keyframes`
 const HeroWrapper = styled.div`
   height: 100vh;
   width: 100vw;
-  background: linear-gradient(135deg, #1e1e2f 0%, #2a2a3c 100%);
+  // background: linear-gradient(135deg,rgb(248,248,255) 0%,  rgb(242,243,244)100%);
   display: flex;
   flex-direction: column;
   color: white;
@@ -79,7 +64,7 @@ const BackgroundCards = styled.div`
 `;
 
 const BackgroundCard = styled.div`
-  background: linear-gradient(135deg, #3a3a4c 0%, #2a2a3c 100%);
+  background: linear-gradient(135deg, rgba(58, 58, 76, 0.6) 0%, rgba(42, 42, 60, 0.6) 100%);
   border-radius: 15px;
   padding: 2rem;
   display: flex;
@@ -92,7 +77,7 @@ const BackgroundCard = styled.div`
   animation: ${float} 6s ease-in-out infinite;
   animation-delay: ${props => props.index * 0.5}s;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  opacity: 0.9;
+  opacity: 0.8;
 `;
 
 const IconWrapper = styled.div`
@@ -163,48 +148,6 @@ const HeroButton = styled.button`
     transform: translateY(-2px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
   }
-`;
-
-const HeroImageWrapper = styled.div`
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-`;
-
-const HeroImage = styled.div`
-  width: ${props => (props.size === 'large' ? '350px' : '250px')};
-  height: ${props => (props.size === 'large' ? '350px' : '250px')};
-  border-radius: 15px;
-  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-  position: absolute;
-  top: ${props => props.top};
-  left: ${props => props.left};
-  z-index: ${props => (props.index === 0 ? 1 : 0)};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  animation: ${float} 6s ease-in-out infinite;
-  animation-delay: ${props => props.index * 0.5}s;
-`;
-
-const CardContent = styled.div`
-  text-align: center;
-  color: white;
-`;
-
-const StyledIcon = styled.div`
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: #ffdd57;
-`;
-
-const CardText = styled.p`
-  font-size: 1.1rem;
-  opacity: 0.9;
 `;
 
 export default Hero;

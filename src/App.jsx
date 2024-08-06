@@ -2,7 +2,9 @@ import LandingPage from './views/LandingPage';
 
 const App = () => {
   return (
+
     <LandingPage />
+    
   );
 };
 
