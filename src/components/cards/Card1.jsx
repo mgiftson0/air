@@ -1,4 +1,4 @@
-import  { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
 import ScrollReveal from 'scrollreveal';
@@ -10,7 +10,7 @@ const fadeIn = keyframes`
   }
   to {
     opacity: 1;
-  } 
+  }
 `;
 
 // Define the scale-up on hover animation
@@ -40,7 +40,13 @@ const Card = ({ className }) => {
   }, []);
 
   return (
-    <CardWrapper className={className} ref={cardRef} />
+    <CardWrapper ref={cardRef} className={className}>
+      <Carousel>
+        <CarouselCard>Card 1</CarouselCard>
+        <CarouselCard>Card 2</CarouselCard>
+        <CarouselCard>Card 3</CarouselCard>
+      </Carousel>
+    </CardWrapper>
   );
 };
 
@@ -83,6 +89,27 @@ const CardWrapper = styled.div`
     padding: 1rem;
     margin-left: -30px;
   }
+`;
+
+const Carousel = styled.div`
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+`;
+
+const CarouselCard = styled.div`
+  flex: 0 0 auto;
+  width: 150px;
+  height: 150px;
+  margin-right: 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export default Card;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Card from '../cards/Cards'; // Adjust the import path as needed
+import Card from '../cards/Cards'; 
 
 const About = () => {
   return (
@@ -7,8 +7,6 @@ const About = () => {
       <CardContainer>
         <Card title="Card 1" description="This is card 1." />
         <Card title="Card 2" description="This is card 2." />
-        {/* <Card title="Card 3" description="This is card 3." /> */}
-        {/* <Card title="Card 4" description="This is card 4." /> */}
       </CardContainer>
     </AboutSection>
   );
@@ -16,7 +14,6 @@ const About = () => {
 
 const AboutSection = styled.section`
   position: relative;
-//   background: linear-gradient(135deg, rgba(255, 0, 193, 0.4) 0%, rgba(0, 191, 255, 0.4) 100%);
   color: white;
   margin-top: -10px;
   padding: 2rem;
@@ -30,7 +27,17 @@ const CardContainer = styled.div`
   position: relative;
   z-index: 10;
   padding: 1rem;
-  /* Optional: Add extra padding to ensure cards don't touch the edges */
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+
+  /* Responsive adjustments */
+  @media (max-width: 1200px) {
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 992px) {
+    flex-direction: column; /* Stack cards vertically on smaller screens */
+    align-items: center; /* Center align the cards vertically */
+  }
 `;
 
 export default About;
