@@ -39,9 +39,17 @@ const ContentWrapper = styled.div`
   gap: 2rem;
   animation: ${fadeIn} 1s ease-out;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     flex-direction: column;
     text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    gap: 1rem;
   }
 `;
 
@@ -50,7 +58,7 @@ const ImageContainer = styled.div`
   max-width: 50%;
   animation: ${fadeIn} 1s ease-out 0.3s both;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     max-width: 100%;
     margin-bottom: 1.5rem;
   }
@@ -143,6 +151,14 @@ const LineBreakWrapper = styled.div`
   max-width: 800px;
   margin: 3rem 0;
   animation: ${fadeIn} 1s ease-out 0.7s both;
+
+  @media (max-width: 768px) {
+    margin: 2.5rem 0;
+  }
+
+  @media (max-width: 480px) {
+    margin: 2rem 0;
+  }
 `;
 
 const LineBreak = styled.div`
@@ -167,6 +183,20 @@ const LineBreak = styled.div`
   &::after {
     margin-left: 0.7em;
   }
+
+  @media (max-width: 768px) {
+    &::before,
+    &::after {
+      border-bottom-width: 3px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    &::before,
+    &::after {
+      border-bottom-width: 2px;
+    }
+  }
 `;
 
 const LineBreakText = styled.span`
@@ -175,6 +205,14 @@ const LineBreakText = styled.span`
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+  }
 `;
 
 const AppList = styled.ul`
@@ -185,6 +223,14 @@ const AppList = styled.ul`
   gap: 0.8rem;
   justify-content: center;
   animation: ${fadeIn} 1s ease-out 0.9s both;
+
+  @media (max-width: 1024px) {
+    gap: 0.7rem;
+  }
+
+  @media (max-width: 768px) {
+    gap: 0.6rem;
+  }
 
   @media (max-width: 480px) {
     gap: 0.5rem;
@@ -205,6 +251,18 @@ const LineBreak2 = styled.hr`
   );
   margin-bottom: 3rem;
   animation: ${fadeIn} 1s ease-out;
+
+  @media (max-width: 1024px) {
+    margin-bottom: 2.5rem;
+  }
+
+  @media (max-width: 768px) {
+    margin-bottom: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    margin-bottom: 1.5rem;
+  }
 `;
 
 const AppItem = styled.li`
@@ -223,6 +281,11 @@ const AppItem = styled.li`
   @media (max-width: 1024px) {
     font-size: 1rem;
     padding: 0.5rem 1rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.95rem;
+    padding: 0.45rem 0.9rem;
   }
 
   @media (max-width: 480px) {
