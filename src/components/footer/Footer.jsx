@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { FaTwitter, FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { Twitter, Instagram, LinkedIn, GitHub } from '@mui/icons-material';
 
 const FooterContainer = styled.footer`
   color: #fff;
@@ -76,16 +76,16 @@ const Footer = () => {
       </FooterContent>
       <SocialIcons>
         <SocialIcon href="https://github.com/mgiftson0" target="_blank" rel="noopener noreferrer">
-          <FaGithub />
+          <GitHub />
         </SocialIcon>
         <SocialIcon href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-          <FaTwitter />
+          <Twitter />
         </SocialIcon>
         <SocialIcon href="https://www.instagram.com/msabali_?igsh=NnJiMW81YXM1Y3Qz&utm_source=qr" target="_blank" rel="noopener noreferrer">
-          <FaInstagram />
+          <Instagram />
         </SocialIcon>
         <SocialIcon href="/https://www.linkedin.com/in/emmanuel-donkor-30189b297?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer">
-          <FaLinkedin />
+          <LinkedIn />
         </SocialIcon>
       </SocialIcons>
       <Copyright>
