@@ -1,20 +1,13 @@
-import { useState, useEffect, useRef } from 'react';
-import styled, { keyframes } from 'styled-components';
+import  { useState } from 'react';
+import styled from 'styled-components';
 import image6 from '../../assets/image6.png';
 import image7 from '../../assets/image7.png';
-
-const fadeIn = keyframes`
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-`;
 
 const HostSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 4rem 2rem;
-  opacity: 0;
-  animation: ${fadeIn} 1s ease-out forwards;
 `;
 
 const LineBreak = styled.hr`
@@ -30,8 +23,6 @@ const LineBreak = styled.hr`
     rgba(0, 191, 255, 0) 100%
   );
   margin-bottom: 3rem;
-  opacity: 0;
-  animation: ${fadeIn} 1s ease-out 0.3s forwards;
 `;
 
 const Header = styled.h2`
@@ -43,8 +34,6 @@ const Header = styled.h2`
   background: linear-gradient(135deg, rgba(255, 0, 193, 0.8) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(0, 191, 255, 0.8) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  opacity: 0;
-  animation: ${fadeIn} 1s ease-out 0.6s forwards;
 
   @media (max-width: 768px) {
     font-size: 2rem;
@@ -61,8 +50,6 @@ const ImageContainer = styled.div`
   gap: 2rem;
   width: 95%;
   max-width: 1200px;
-  opacity: 0;
-  animation: ${fadeIn} 1s ease-out 0.9s forwards;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -70,8 +57,8 @@ const ImageContainer = styled.div`
   }
 `;
 
-const Image = styled.img`
-  width: ${props => props.isHovered ? '900px' : '700px'}; 
+const StyledImage = styled.img`
+  width: ${props => props.$isHovered ? '900px' : '700px'}; 
   height: 700px;
   border-radius: 15px;
   transition: all 0.3s ease-in-out;
@@ -93,51 +80,25 @@ const Image = styled.img`
 
 const Host = () => {
   const [hoveredImage, setHoveredImage] = useState(null);
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target);
-        }
-      },
-      {
-        threshold: 0.1
-      }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
 
   return (
-    <HostSection ref={sectionRef} style={{ animationPlayState: isVisible ? 'running' : 'paused' }}>
-      <LineBreak style={{ animationPlayState: isVisible ? 'running' : 'paused' }} />
-      <Header style={{ animationPlayState: isVisible ? 'running' : 'paused' }}>Host your own agents or create with us!</Header>
-      <ImageContainer style={{ animationPlayState: isVisible ? 'running' : 'paused' }}>
-        <Image 
-          src={image6} 
-          alt="Host your own agents" 
-          isHovered={hoveredImage === 'image6'}
+    <HostSection>
+      <LineBreak />
+      <Header>Host your own agents or create with us!</Header>
+      <ImageContainer>
+        <StyledImage 
+          $isHovered={hoveredImage === 'image6'}
           onMouseEnter={() => setHoveredImage('image6')}
           onMouseLeave={() => setHoveredImage(null)}
+          src={image6} 
+          alt="Host your own agents"
         />
-        <Image 
-          src={image7} 
-          alt="Create with us" 
-          isHovered={hoveredImage === 'image7'}
+        <StyledImage 
+          $isHovered={hoveredImage === 'image7'}
           onMouseEnter={() => setHoveredImage('image7')}
           onMouseLeave={() => setHoveredImage(null)}
+          src={image7} 
+          alt="Create with us"
         />
       </ImageContainer>
     </HostSection>

@@ -1,12 +1,15 @@
 import Card1 from '../cards/Card1'; // Adjust path as necessary
 import Card2 from '../cards/Card2'; // Adjust path as necessary
 import styled from 'styled-components';
+import { useState } from 'react';
 
 const CardContainer = () => {
+  const [hoveredCard, setHoveredCard] = useState(null);
+
   return (
     <CardContainerWrapper>
-      <Card2 />
-      <Card1 />
+      <Card2 hoveredCard={hoveredCard} setHoveredCard={setHoveredCard} delay="0.2s" />
+      <Card1 hoveredCard={hoveredCard} setHoveredCard={setHoveredCard} />
     </CardContainerWrapper>
   );
 };

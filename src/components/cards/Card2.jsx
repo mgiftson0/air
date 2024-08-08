@@ -28,12 +28,12 @@ const CardWrapper = styled.div`
   border: 1px solid rgb(87, 60, 125);
   box-shadow: none;
   padding: 2rem;
-  width: 700px;
+  width: ${props => props.$isHovered ? '720px' : props.$otherHovered ? '680px' : '700px'};
   height: 500px;
   position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
   animation: ${fadeIn} 1s forwards;
-  animation-delay: ${props => props.delay || '0s'};
+  animation-delay: ${props => props.$delay || '0s'};
   opacity: 0;
 
   &:hover {
@@ -194,8 +194,9 @@ const Card2 = ({ className, hoveredCard, setHoveredCard, delay = '0s' }) => {
       className={className}
       onMouseEnter={() => setHoveredCard('card2')}
       onMouseLeave={() => setHoveredCard(null)}
-      style={{ width: hoveredCard === 'card2' ? '720px' : hoveredCard === 'card1' ? '680px' : '700px' }}
-      delay={delay}
+      $isHovered={hoveredCard === 'card2'}
+      $otherHovered={hoveredCard === 'card1'}
+      $delay={delay}
     >
       <SvgContainer>
         <svg width="50" height="50" viewBox="0 0 100 100">

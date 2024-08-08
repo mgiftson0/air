@@ -13,7 +13,7 @@ const fadeIn = keyframes`
   }
 `;
 
-const Card1 = ({ className }) => {
+const Card1 = ({ className, hoveredCard, setHoveredCard }) => {
   const cardRef = useRef(null);
   const [currentImage, setCurrentImage] = useState(0);
   const images = [
@@ -21,7 +21,6 @@ const Card1 = ({ className }) => {
     '/src/assets/image3.jpg',
     '/src/assets/image4.jpg'
   ];
-  const [hoveredCard, setHoveredCard] = useState(null); 
 
   useEffect(() => {
     if (cardRef.current) {
@@ -48,16 +47,17 @@ const Card1 = ({ className }) => {
     <CardWrapper
       ref={cardRef}
       className={className}
-      onMouseEnter={() => setHoveredCard('card1')} // Set hovered card
-      onMouseLeave={() => setHoveredCard(null)} // Reset on leave
-      style={{ width: hoveredCard === 'card1' ? '720px' : hoveredCard === 'card2' ? '680px' : '700px' }} 
+      onMouseEnter={() => setHoveredCard('card1')}
+      onMouseLeave={() => setHoveredCard(null)}
+      $isHovered={hoveredCard === 'card1'}
+      $otherHovered={hoveredCard === 'card2'}
     >
       <ImageContainer>
         <Image src={images[currentImage]} alt={`Image ${currentImage + 2}`} />
-        <NavButton onClick={prevImage} left>
+        <NavButton onClick={prevImage} $position="left">
           &lt;
         </NavButton>
-        <NavButton onClick={nextImage} right>
+        <NavButton onClick={nextImage} $position="right">
           &gt;
         </NavButton>
       </ImageContainer>
@@ -71,6 +71,8 @@ const Card1 = ({ className }) => {
 
 Card1.propTypes = {
   className: PropTypes.string,
+  hoveredCard: PropTypes.string,
+  setHoveredCard: PropTypes.func,
 };
 
 const CardWrapper = styled.div`
@@ -79,10 +81,10 @@ const CardWrapper = styled.div`
   border: 1px solid rgb(87, 60, 125);
   box-shadow: none;
   padding: 2rem;
-  width: 700px;
+  width: ${props => props.$isHovered ? '720px' : props.$otherHovered ? '680px' : '700px'};
   height: 500px;
   position: relative;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
   opacity: 0;
   animation: ${fadeIn} 1s forwards;
 
@@ -136,7 +138,7 @@ const NavButton = styled.button`
   cursor: pointer;
   font-size: 18px;
   border-radius: 50%;
-  ${props => props.left ? 'left: 10px;' : 'right: 10px;'}
+  ${props => props.$position === 'left' ? 'left: 10px;' : 'right: 10px;'}
 
   &:hover {
     background-color: rgba(0, 0, 0, 0.7);
