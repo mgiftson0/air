@@ -4,6 +4,7 @@ import CardContainer from '../cards/CardContainer'; // Adjust path as necessary
 const About = () => {
   return (
     <AboutSection>
+      <LineBreak />
       <Header>
         Browse Autonomous AI Agents
         <Subtitle>Browse the marketplace for individual agents or pre-built agent teams curated by our community.</Subtitle>
@@ -24,7 +25,6 @@ const AboutSection = styled.section`
   padding: 4rem 2rem 2rem; /* Increased top padding for spacing */
   min-height: 100vh;
   text-align: center;
-  // background-color: #000; 
 `;
 
 const Header = styled.h1`
@@ -70,6 +70,20 @@ const Subtitle = styled.p`
     font-size: 0.875rem;
     margin-bottom: 1rem;
   }
+`;
+const LineBreak = styled.hr`
+  width: 80%;
+  max-width: 600px;
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    rgba(255, 0, 193, 0) 0%, 
+    rgba(255, 0, 193, 0.8) 20%, 
+    rgba(255, 255, 255, 0.8) 50%, 
+    rgba(0, 191, 255, 0.8) 80%, 
+    rgba(0, 191, 255, 0) 100%
+  );
+  margin-bottom: 3rem;
 `;
 
 const CardContainerWrapper = styled.div`

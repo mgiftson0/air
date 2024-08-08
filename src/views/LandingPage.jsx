@@ -5,7 +5,8 @@ import Hero from '../components/hero/Hero';
 import About from '../components/about/About';
 // import Contact from './Contact';
 import Footer from '../components/footer/Footer';
-
+import Category from '../components/categories/Category';
+import Host from '../components/Host/Host';
 const LandingPage = () => {
   return (
     <PageWrapper>
@@ -14,6 +15,8 @@ const LandingPage = () => {
       {/* <Services /> */}
       <About />
       {/* <Contact /> */}
+      <Category />
+      <Host />
       <Footer />
     </PageWrapper>
   );

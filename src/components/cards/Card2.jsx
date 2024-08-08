@@ -30,6 +30,8 @@ const CardWrapper = styled.div`
   &:hover {
     transform: scale(1.05);
     border: 1px solid rgb(191, 150, 250);    
+   box-shadow: rgb(87, 60, 125) 0px 0px 40px 1px inset;
+
   }
 
   @media (max-width: 1200px) {
@@ -54,6 +56,14 @@ const Carousel = styled.div`
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   padding: 10px;
+  border-radius: 25px;
+  background-color: transparent;
+  // box-shadow: rgb(87, 60, 125) 0px 0px 40px 1px , rgba(181, 133, 249, 0.27) 0px 0px 64px 20px;
+  
+  &:hover {
+    box-shadow: rgb(87, 60, 125) 0px 0px 40px 1px , rgba(181, 133, 249, 0.27) 0px 0px 64px 20px;
+  }
+
 `;
 
 const CarouselCard = styled.div`

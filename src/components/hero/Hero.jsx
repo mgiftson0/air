@@ -76,7 +76,7 @@ const lineAnimation = keyframes`
 const HeroWrapper = styled.div`
   height: 100vh;
   width: 100vw;
-background: linear-gradient(90deg, rgba(18,18,68,1) 0%, rgba(29,29,37,1) 50%, rgba(51,40,93,1) 100%);  display: flex;
+  // background: linear-gradient(90deg, rgba(18,18,68,1) 0%, rgba(29,29,37,1) 50%, rgba(51,40,93,1) 100%);  display: flex;
   flex-direction: column;
   color: white;
   position: relative;
@@ -99,7 +99,7 @@ const BackgroundCards = styled.div`
 `;
 
 const BackgroundCard = styled.div`
-  background: linear-gradient(135deg, rgba(58, 58, 76, 0.6) 0%, rgba(42, 42, 60, 0.6) 100%);
+  // background: linear-gradient(135deg, rgba(58, 58, 76, 0.6) 0%, rgba(42, 42, 60, 0.6) 100%);
   border-radius: 15px;
   padding: 2rem;
   display: flex;

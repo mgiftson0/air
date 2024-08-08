@@ -13,9 +13,9 @@ const CardContainer = () => {
 
 const CardContainerWrapper = styled.div`
   display: flex;
-  flex-direction: row; /* Align cards horizontally */
-  gap: 2rem; /* Adjust gap between cards */
-  align-items: center; /* Center align the cards vertically */
+  flex-direction: row;
+  gap: 2rem; 
+  align-items: center;
   justify-content: center; 
   padding: 2rem;
   margin-top: 50px;
@@ -35,7 +35,7 @@ const CardContainerWrapper = styled.div`
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
-    width: 100%; /* Ensure full width on smaller screens */
+    width: 100%; 
   }
     @media (max-width: 480px) {
       display: flex;

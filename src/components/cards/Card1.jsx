@@ -21,7 +21,7 @@ const Card1 = ({ className }) => {
     '/src/assets/image3.jpg',
     '/src/assets/image4.jpg'
   ];
-  const [hoveredCard, setHoveredCard] = useState(null); // Add state for hovered card
+  const [hoveredCard, setHoveredCard] = useState(null); 
 
   useEffect(() => {
     if (cardRef.current) {
@@ -50,7 +50,7 @@ const Card1 = ({ className }) => {
       className={className}
       onMouseEnter={() => setHoveredCard('card1')} // Set hovered card
       onMouseLeave={() => setHoveredCard(null)} // Reset on leave
-      style={{ width: hoveredCard === 'card1' ? '720px' : hoveredCard === 'card2' ? '680px' : '700px' }} // Adjust width based on hover
+      style={{ width: hoveredCard === 'card1' ? '720px' : hoveredCard === 'card2' ? '680px' : '700px' }} 
     >
       <ImageContainer>
         <Image src={images[currentImage]} alt={`Image ${currentImage + 2}`} />
@@ -88,6 +88,8 @@ const CardWrapper = styled.div`
 
   &:hover {
     border: 2px solid rgb(191, 150, 250);
+        box-shadow: rgb(87, 60, 125) 0px 0px 40px 1px inset;
+
   }
 
   @media (max-width: 1200px) {
