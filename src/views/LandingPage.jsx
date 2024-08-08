@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 import Hero from '../components/hero/Hero';
-// We'll import other sections as we create them
-// import Services from './Services';
 import About from '../components/about/About';
-// import Contact from './Contact';
-import Footer from '../components/footer/Footer';
+import SocialCard from '../components/socialcard/SocialCard';
 import Category from '../components/categories/Category';
 import Host from '../components/Host/Host';
+import Footer from '../components/footer/Footer';
+
+
+
+
 const LandingPage = () => {
   return (
     <PageWrapper>
@@ -17,6 +19,7 @@ const LandingPage = () => {
       {/* <Contact /> */}
       <Category />
       <Host />
+      <SocialCard />
       <Footer />
     </PageWrapper>
   );

@@ -1,86 +1,99 @@
 import styled from 'styled-components';
-import { Facebook, Twitter, Instagram, LinkedIn } from '@mui/icons-material';
+import { FaTwitter, FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa';
 
-const Footer = () => {
-  return (
-    <FooterWrapper>
-      <FooterContent>
-        <SocialIcons>
-          <SocialIcon href="https://facebook.com" target="_blank" aria-label="Facebook">
-            <Facebook />
-          </SocialIcon>
-          <SocialIcon href="https://twitter.com" target="_blank" aria-label="Twitter">
-            <Twitter />
-          </SocialIcon>
-          <SocialIcon href="https://instagram.com" target="_blank" aria-label="Instagram">
-            <Instagram />
-          </SocialIcon>
-          <SocialIcon href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
-            <LinkedIn />
-          </SocialIcon>
-        </SocialIcons>
-        {/* <FooterText>© {new Date().getFullYear()} Your Company. All rights reserved.</FooterText> */}
-      </FooterContent>
-    </FooterWrapper>
-  );
-};
-
-const FooterWrapper = styled.footer`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 70px; 
-  padding: 0 1rem;
-  position: fixed;
-  bottom: 20px; 
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
-  max-width: 500px; 
-  margin: 0 auto;
-  border-radius: 20px;
-  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2); 
-
-  @media (max-width: 480px) {
-    max-width: 70%; 
-    padding: 0 0.5rem;
-  }
-     
-`;
-
-const FooterContent = styled.div`
+const FooterContainer = styled.footer`
+  color: #fff;
+  padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: center;
+  }
+`;
+
+const FooterContent = styled.div`
   text-align: center;
-  width: 100%; 
+  margin-bottom: 1rem;
+  
+  @media (min-width: 768px) {
+    text-align: center;
+    margin-bottom: 0;
+    margin-right: 2rem;
+  }
 `;
 
 const SocialIcons = styled.div`
   display: flex;
-  gap: 1rem;
-  margin-bottom: 0.5rem; 
-`;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
 
-const SocialIcon = styled.a`
-  color: gray;
-  font-size: 4rem; 
-  transition: color 0.3s ease;
-
-  &:hover {
-    color: #0066cc; 
-    // transform: scale(1.2);
-    transition: transform 0.3s ease-in-out;
-    transform: scale(1.9);
-    color: white;
+  @media (min-width: 768px) {
+    margin-bottom: 0;
   }
 `;
 
-// const FooterText = styled.p`
-//   color: white;
-//   font-size: 0.8rem; /* Adjust font size if needed */
-//   margin: 0;
-// `;
+const SocialIcon = styled.a`
+  color: #fff;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+  
+  &:hover {
+  box-shadow: rgb(87, 60, 125) 0px 0px 40px 1px , rgba(181, 133, 249, 0.9) 0px 0px 64px 20px;
+
+  }
+`;
+
+const Copyright = styled.p`
+  margin: 1rem 0 0;
+  font-size: 0.9rem;
+  text-align: center;
+  width: 100%;
+  color: rgba(255, 255, 255, 0.7);
+`;
+
+const Link = styled.a`
+  color: white;
+  text-decoration: underline;
+  
+   &:hover {
+  box-shadow: rgb(87, 60, 125) 0px 0px 40px 1px , rgba(181, 133, 249, 1) 0px 0px 64px 20px;
+
+  }
+
+`;
+
+const Footer = () => {
+  return (
+    <FooterContainer>
+      <FooterContent>
+        <h3>Our Company</h3>
+        <p>We provide innovative solutions for your business needs.</p>
+      </FooterContent>
+      <SocialIcons>
+        <SocialIcon href="https://github.com/mgiftson0" target="_blank" rel="noopener noreferrer">
+          <FaGithub />
+        </SocialIcon>
+        <SocialIcon href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+          <FaTwitter />
+        </SocialIcon>
+        <SocialIcon href="https://www.instagram.com/msabali_?igsh=NnJiMW81YXM1Y3Qz&utm_source=qr" target="_blank" rel="noopener noreferrer">
+          <FaInstagram />
+        </SocialIcon>
+        <SocialIcon href="/https://www.linkedin.com/in/emmanuel-donkor-30189b297?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer">
+          <FaLinkedin />
+        </SocialIcon>
+      </SocialIcons>
+      <Copyright>
+        &copy; {new Date().getFullYear()} manuel. All rights reserved. | <Link href="https://sabali-mu.vercel.app/">manuel &#127760;</Link>
+        
+      </Copyright>
+    </FooterContainer>
+  );
+};
 
 export default Footer;

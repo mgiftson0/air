@@ -2,15 +2,24 @@ import { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
 import ScrollReveal from 'scrollreveal';
+import { BarChart, Code, Brush } from '@mui/icons-material';
 
-// Define the fade-in animation
+// Define animations
 const fadeIn = keyframes`
   from {
     opacity: 0;
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
+    transform: translateY(0);
   }
+`;
+
+const floatAnimation = keyframes`
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
 `;
 
 const CardWrapper = styled.div`
@@ -22,16 +31,15 @@ const CardWrapper = styled.div`
   width: 700px;
   height: 500px;
   position: relative;
-  // z-index: 10;
-  transition: transform 0.3s ease;
-  opacity: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   animation: ${fadeIn} 1s forwards;
+  animation-delay: ${props => props.delay || '0s'};
+  opacity: 0;
 
   &:hover {
     transform: scale(1.05);
     border: 1px solid rgb(191, 150, 250);    
-   box-shadow: rgb(87, 60, 125) 0px 0px 40px 1px inset;
-
+    box-shadow: rgb(87, 60, 125) 0px 0px 40px 1px inset;
   }
 
   @media (max-width: 1200px) {
@@ -58,17 +66,16 @@ const Carousel = styled.div`
   padding: 10px;
   border-radius: 25px;
   background-color: transparent;
-  // box-shadow: rgb(87, 60, 125) 0px 0px 40px 1px , rgba(181, 133, 249, 0.27) 0px 0px 64px 20px;
+  transition: box-shadow 0.3s ease;
   
   &:hover {
     box-shadow: rgb(87, 60, 125) 0px 0px 40px 1px , rgba(181, 133, 249, 0.27) 0px 0px 64px 20px;
   }
-
 `;
 
 const CarouselCard = styled.div`
   flex: 0 0 auto;
-  width: 200px; // Base width
+  width: 200px;
   height: 300px;
   border: 1px solid rgb(191, 150, 250);
   margin-right: 1rem;
@@ -77,24 +84,50 @@ const CarouselCard = styled.div`
   box-shadow: rgb(87, 60, 125) 0px 0px 40px 1px inset, rgba(181, 133, 249, 0.27) 0px 0px 64px 20px;
   scroll-snap-align: start;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease, width 0.3s ease;
+  padding: 1rem;
+  animation: ${floatAnimation} 3s ease-in-out infinite;
 
   &:hover {
-    width: 220px; // Increase width on hover
+    width: 220px;
     border-color: rgba(255, 20, 213, 1);
+    animation-play-state: paused;
   }
 
   &:hover ~ & {
-    width: 180px; // Decrease width of other cards
+    width: 180px;
   }
+`;
+
+const IconWrapper = styled.div`
+  margin-bottom: 1rem;
+  font-size: 4rem;
+  color: #00FFFF;
+`;
+
+const CardTitle = styled.h3`
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 0.5rem;
+  text-align: center;
+`;
+
+const CardDescription = styled.p`
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
 `;
 
 const TextSection = styled.div`
   margin-top: 2rem;
   text-align: center;
   padding: 0 1rem;
+  opacity: 0;
+  animation: ${fadeIn} 1s forwards;
+  animation-delay: 0.5s;
 `;
  
 const Title = styled.h2`
@@ -131,7 +164,15 @@ const Subtitle = styled.p`
   }
 `;
 
-const Card2 = ({ className, hoveredCard, setHoveredCard }) => {
+const SvgContainer = styled.div`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+`;
+
+const Card2 = ({ className, hoveredCard, setHoveredCard, delay = '0s' }) => {
   const cardRef = useRef(null);
 
   useEffect(() => {
@@ -151,14 +192,39 @@ const Card2 = ({ className, hoveredCard, setHoveredCard }) => {
     <CardWrapper
       ref={cardRef}
       className={className}
-      onMouseEnter={() => setHoveredCard('card2')} // Set hovered card
-      onMouseLeave={() => setHoveredCard(null)} // Reset on leave
-      style={{ width: hoveredCard === 'card2' ? '720px' : hoveredCard === 'card1' ? '680px' : '700px' }} // Adjust width based on hover
+      onMouseEnter={() => setHoveredCard('card2')}
+      onMouseLeave={() => setHoveredCard(null)}
+      style={{ width: hoveredCard === 'card2' ? '720px' : hoveredCard === 'card1' ? '680px' : '700px' }}
+      delay={delay}
     >
+      <SvgContainer>
+        <svg width="50" height="50" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="40" stroke="rgb(191, 150, 250)" strokeWidth="4" fill="none" />
+          <path d="M50 10 L50 90 M10 50 L90 50" stroke="rgb(191, 150, 250)" strokeWidth="4" />
+        </svg>
+      </SvgContainer>
       <Carousel>
-        <CarouselCard>Card 1</CarouselCard>
-        <CarouselCard>Card 2</CarouselCard>
-        <CarouselCard>Card 3</CarouselCard>
+        <CarouselCard>
+          <IconWrapper>
+            <BarChart />
+          </IconWrapper>
+          <CardTitle>Data Analyst</CardTitle>
+          <CardDescription>Expert in analyzing and interpreting complex data sets</CardDescription>
+        </CarouselCard>
+        <CarouselCard>
+          <IconWrapper>
+            <Code />
+          </IconWrapper>
+          <CardTitle>Web Developer</CardTitle>
+          <CardDescription>Skilled in creating responsive and dynamic web applications</CardDescription>
+        </CarouselCard>
+        <CarouselCard>
+          <IconWrapper>
+            <Brush />
+          </IconWrapper>
+          <CardTitle>Graphic Designer</CardTitle>
+          <CardDescription>Creative professional specializing in visual communication and aesthetics</CardDescription>
+        </CarouselCard>
       </Carousel>
       <TextSection>
         <Title>Individual AI Agents</Title>
@@ -172,6 +238,7 @@ Card2.propTypes = {
   className: PropTypes.string,
   hoveredCard: PropTypes.string,
   setHoveredCard: PropTypes.func,
+  delay: PropTypes.string,
 };
 
 export default Card2;
