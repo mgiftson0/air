@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
 import ScrollReveal from 'scrollreveal';
@@ -13,18 +13,15 @@ const fadeIn = keyframes`
   }
 `;
 
-// Define the scale-up on hover animation
-const scaleUp = keyframes`
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.05);
-  }
-`;
-
-const Card = ({ className }) => {
+const Card1 = ({ className }) => {
   const cardRef = useRef(null);
+  const [currentImage, setCurrentImage] = useState(0);
+  const images = [
+    '/src/assets/image2.jpg',
+    '/src/assets/image3.jpg',
+    '/src/assets/image4.jpg'
+  ];
+  const [hoveredCard, setHoveredCard] = useState(null); // Add state for hovered card
 
   useEffect(() => {
     if (cardRef.current) {
@@ -39,18 +36,40 @@ const Card = ({ className }) => {
     }
   }, []);
 
+  const nextImage = () => {
+    setCurrentImage((prev) => (prev + 1) % images.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
+  };
+
   return (
-    <CardWrapper ref={cardRef} className={className}>
-      <Carousel>
-        <CarouselCard>Card 1</CarouselCard>
-        <CarouselCard>Card 2</CarouselCard>
-        <CarouselCard>Card 3</CarouselCard>
-      </Carousel>
+    <CardWrapper
+      ref={cardRef}
+      className={className}
+      onMouseEnter={() => setHoveredCard('card1')} // Set hovered card
+      onMouseLeave={() => setHoveredCard(null)} // Reset on leave
+      style={{ width: hoveredCard === 'card1' ? '720px' : hoveredCard === 'card2' ? '680px' : '700px' }} // Adjust width based on hover
+    >
+      <ImageContainer>
+        <Image src={images[currentImage]} alt={`Image ${currentImage + 2}`} />
+        <NavButton onClick={prevImage} left>
+          &lt;
+        </NavButton>
+        <NavButton onClick={nextImage} right>
+          &gt;
+        </NavButton>
+      </ImageContainer>
+      <TextSection>
+        <Title>Pre-configured teams</Title>
+        <Subtitle>Browse and deploy pre-configured agent teams curated by our community.</Subtitle>
+      </TextSection>
     </CardWrapper>
   );
 };
 
-Card.propTypes = {
+Card1.propTypes = {
   className: PropTypes.string,
 };
 
@@ -63,15 +82,12 @@ const CardWrapper = styled.div`
   width: 700px;
   height: 500px;
   position: relative;
-  z-index: 10;
   transition: transform 0.3s ease;
-  transform: translateY(-50%);
-  margin-top: 150px;
   opacity: 0;
   animation: ${fadeIn} 1s forwards;
 
   &:hover {
-    // animation: ${scaleUp} 0.3s forwards;
+    border: 2px solid rgb(191, 150, 250);
   }
 
   @media (max-width: 1200px) {
@@ -87,29 +103,80 @@ const CardWrapper = styled.div`
     width: 330px;
     height: 500px;
     padding: 1rem;
-    margin-left: -30px;
   }
 `;
 
-const Carousel = styled.div`
+const ImageContainer = styled.div`
+  position: relative;
+  width: 100%;
+  height: 70%;
   display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-`;
-
-const CarouselCard = styled.div`
-  flex: 0 0 auto;
-  width: 150px;
-  height: 150px;
-  margin-right: 1rem;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  scroll-snap-align: start;
-  display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 `;
 
-export default Card;
+const Image = styled.img`
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  border-radius: 15px;
+  border: 2px solid rgb(87, 60, 125);
+`;
+
+const NavButton = styled.button`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 50%;
+  ${props => props.left ? 'left: 10px;' : 'right: 10px;'}
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+`;
+
+const TextSection = styled.div`
+  margin-top: 1rem;
+  text-align: center;
+  padding: 0 1rem;
+`;
+
+const Title = styled.h2`
+  font-size: 1.8rem;
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(135deg, rgba(255, 0, 193, 0.8) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(0, 191, 255, 0.8) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+  
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.3rem;
+  }
+`;
+
+const Subtitle = styled.p`
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.4;
+  
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+  }
+`;
+
+export default Card1;
