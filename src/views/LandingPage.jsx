@@ -6,9 +6,6 @@ import Category from '../components/categories/Category';
 import Host from '../components/Host/Host';
 import Footer from '../components/footer/Footer';
 
-
-
-
 const LandingPage = () => {
   return (
     <PageWrapper>
