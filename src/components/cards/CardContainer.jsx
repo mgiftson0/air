@@ -23,17 +23,18 @@ const CardContainerWrapper = styled.div`
   justify-content: center;
   padding: 32px;
   margin-top: 50px;
-  margin-left: -50px;
+  // margin-left: -50px;
   overflow: hidden;
   box-sizing: border-box;
   max-width: 100%;
   width: 100%;
+  // background-color: yellow;
 
   @media (max-width: 1200px) {
     gap: 24px;
     padding: 24px;
     margin-top: 40px;
-    margin-left: -40px;
+    // margin-left: -40px;
   }
 
   @media (max-width: 768px) {
@@ -42,7 +43,7 @@ const CardContainerWrapper = styled.div`
     width: 100%;
     padding: 16px;
     margin-top: 30px;
-    margin-left: -30px;
+    // margin-left: -30px;
   }
 
   @media (max-width: 480px) {

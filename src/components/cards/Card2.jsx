@@ -27,9 +27,9 @@ const CardWrapper = styled.div`
   border-radius: 25px;
   border: 1px solid rgb(87, 60, 125);
   box-shadow: none;
-  padding: 32px;
-  width: ${props => props.$isHovered ? '720px' : props.$otherHovered ? '680px' : '700px'};
-  height: 500px;
+  padding: 10px;
+  width: ${props => props.$isHovered ? 'fit-content' : props.$otherHovered ? 'fit-content' : 'fit-content'};
+  height: 530px;
   position: relative;
   transition: all 0.3s ease;
   animation: ${fadeIn} 1s forwards;
@@ -43,19 +43,19 @@ const CardWrapper = styled.div`
   }
 
   @media (max-width: 1200px) {
-    width: 600px;
+    width: fit-content;
   }
 
   @media (max-width: 768px) {
-    width: 500px;
-    padding: 24px;
+    width: fit-content;
+    padding: 15px;
   }
 
   @media (max-width: 480px) {
     width: 300px;
     height: 500px;
     padding: 16px;
-    margin-left: -30px;
+    // margin-left: -30px;
 
   }
 `;
@@ -63,6 +63,7 @@ const CardWrapper = styled.div`
 const Carousel = styled.div`
   display: flex;
   overflow-x: auto;
+  width: fit-content;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   padding: 10px;
@@ -77,11 +78,23 @@ const Carousel = styled.div`
   @media (max-width: 768px) {
     padding: 5px;
   }
+
+  @media (max-width: 480px) {
+    padding: 3px;
+    width: 100%;
+    border-radius: 15px;
+    margin-top: 40px;
+    padding-top: 10px;
+    
+    &:hover {
+      box-shadow: rgb(87, 60, 125) 0px 0px 20px 1px , rgba(181, 133, 249, 0.27) 0px 0px 32px 10px;
+    }
+  }
 `;
 
 const CarouselCard = styled.div`
   flex: 0 0 auto;
-  width: 200px;
+  width: 150px;
   height: 300px;
   border: 1px solid rgb(191, 150, 250);
   margin-right: 16px;
@@ -123,24 +136,40 @@ const CarouselCard = styled.div`
   }
 
   @media (max-width: 480px) {
-    width: 150px;
+    width: 100px;
     height: 200px;
     margin-right: 8px;
     padding: 8px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
 
     &:hover {
-      width: 170px;
+      width: 110px;
     }
 
     &:hover ~ & {
-      width: 130px;
+      width: 110px;
     }
   }
 `;
 
 const IconWrapper = styled.div`
   margin-bottom: 16px;
-  font-size: 32px;
+  font-size: 30px;
   color: #00FFFF;
 
   @media (max-width: 768px) {
@@ -153,10 +182,11 @@ const IconWrapper = styled.div`
 `;
 
 const CardTitle = styled.h3`
-  font-size: 19px;
+  font-size: 15px;
   color: white;
   margin-bottom: 8px;
   text-align: center;
+  margin-top: 20px;
 
   @media (max-width: 768px) {
     font-size: 18px;
@@ -168,12 +198,12 @@ const CardTitle = styled.h3`
 `;
 
 const CardDescription = styled.p`
-  font-size: 14px;
+  font-size: 10px;
   color: rgba(255, 255, 255, 0.8);
   text-align: center;
-
+  margin-top: 15px;
   @media (max-width: 768px) {
-    font-size: 13px;
+    font-size: 11px;
   }
 
   @media (max-width: 480px) {
@@ -201,7 +231,7 @@ const TextSection = styled.div`
 `;
  
 const Title = styled.h2`
-  font-size: 32px;
+  font-size: 20px;
   font-family: 'Orbitron', sans-serif;
   background: linear-gradient(135deg, rgba(255, 0, 193, 0.8) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(0, 191, 255, 0.8) 100%);
   -webkit-background-clip: text;
@@ -210,7 +240,7 @@ const Title = styled.h2`
   margin-top: 20px;
   
   @media (max-width: 768px) {
-    font-size: 28px;
+    font-size: 18px;
   }
 
   @media (max-width: 480px) {

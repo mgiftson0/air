@@ -45,18 +45,20 @@ const Header = styled.h1`
   background: linear-gradient(135deg, rgba(255, 0, 193, 0.8) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(0, 191, 255, 0.8) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 27px;
+  font-size: 25px;
   margin-bottom: 32px;
   text-align: center;
-  margin-left: -35px;
+  margin-left: -65px;
   margin-top: 30px;
 
   @media (max-width: 1200px) {
-    font-size: 25px;
+    font-size: 23px;
+    margin-left: -50px;
   }
 
   @media (max-width: 768px) {
-    font-size: 25px;
+    font-size: 23px;
+    margin-left: -40px;
   }
 
   @media (max-width: 480px) {
@@ -71,17 +73,18 @@ const Header = styled.h1`
 `;
 
 const Subtitle = styled.p`
-  font-size: 19px;
+  font-size: 17px;
   color: white;
   margin-bottom: 24px;
   text-align: center;
+  margin-left: -50px;
 
   @media (max-width: 1200px) {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   @media (max-width: 768px) {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   @media (max-width: 480px) {
@@ -99,7 +102,7 @@ const LineBreak = styled.hr`
   height: 2px;
   background: linear-gradient(90deg, rgba(255, 0, 193, 0) 0%, rgba(255, 0, 193, 0.8) 20%, rgba(255, 255, 255, 0.8) 50%, rgba(0, 191, 255, 0.8) 80%, rgba(0, 191, 255, 0) 100%);
   margin-bottom: -48px;
-  margin-top: 20px;
+  // margin-top: 20px;
 
   @media (max-width: 1200px) {
     width: 90%;
@@ -122,18 +125,24 @@ const LineBreak = styled.hr`
 
 const CardContainerWrapper = styled.div`
   margin-top: 32px;
-  width: 100%;
+  width: fit-content;
+  // background-color: red;
 
   @media (max-width: 1200px) {
     margin-top: 24px;
+      width: fit-content;
+
   }
 
   @media (max-width: 768px) {
     margin-top: 16px;
+      width: fit-content;
+
   }
 
   @media (max-width: 480px) {
     margin-top: 12px;
+    width: fit-content;
   }
 `;
 

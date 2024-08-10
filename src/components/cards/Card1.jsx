@@ -81,7 +81,7 @@ const CardWrapper = styled.div`
   border: 1px solid rgb(87, 60, 125);
   box-shadow: none;
   padding: 32px;
-  width: ${props => props.$isHovered ? '720px' : props.$otherHovered ? '680px' : '700px'};
+  width: ${props => props.$isHovered ? '720px' : props.$otherHovered ? 'fit-content' : 'fit-content'};
   height: 500px;
   position: center;
   transition: all 0.3s ease;
@@ -107,7 +107,7 @@ const CardWrapper = styled.div`
     width: 300px;
     height: 450px;
     padding: 16px;
-    margin-left: -30px;
+    // margin-left: -30px;
     margin-bottom: 10px;
   }
 `;
@@ -115,28 +115,30 @@ const CardWrapper = styled.div`
 const ImageContainer = styled.div`
   position: relative;
   width: 100%;
-  height: 70%;
+  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
+  // background-color: red;
 
   @media (max-width: 480px) {
-    height: 60%;
+    width: 100%;
+    height: 300px;
   }
 `;
 
 const Image = styled.img`
-  max-width: 160px;
-  max-height: 100px;
-  object-fit: contain;
+  width: 90%;
+  height: 95%;
+  object-fit: cover;
   border-radius: 15px;
   border: 2px solid rgb(87, 60, 125);
 
   @media (max-width: 480px) {
-    max-width: 95%;
-    max-height: 95%;
-    border-radius: 10px;
-    margin-top: -120px;
+  width: 90%;
+  height: 95%;  
+  object-fit: contain;
+    
   }
 `;
 
