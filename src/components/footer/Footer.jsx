@@ -3,7 +3,7 @@ import { Twitter, Instagram, LinkedIn, GitHub } from '@mui/icons-material';
 
 const FooterContainer = styled.footer`
   color: #fff;
-  padding: 2rem 1rem;
+  padding: 32px 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,20 +17,20 @@ const FooterContainer = styled.footer`
 
 const FooterContent = styled.div`
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
   
   @media (min-width: 768px) {
     text-align: center;
     margin-bottom: 0;
-    margin-right: 2rem;
+    margin-right: 32px;
   }
 `;
 
 const SocialIcons = styled.div`
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
-  margin-bottom: 1rem;
+  gap: 24px;
+  margin-bottom: 16px;
 
   @media (min-width: 768px) {
     margin-bottom: 0;
@@ -39,7 +39,7 @@ const SocialIcons = styled.div`
 
 const SocialIcon = styled.a`
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 24px;
   transition: color 0.3s ease;
   
   &:hover {
@@ -49,8 +49,8 @@ const SocialIcon = styled.a`
 `;
 
 const Copyright = styled.p`
-  margin: 1rem 0 0;
-  font-size: 0.9rem;
+  margin: 16px 0 0;
+  font-size: 14px;
   text-align: center;
   width: 100%;
   color: rgba(255, 255, 255, 0.7);

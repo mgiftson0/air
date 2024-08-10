@@ -101,32 +101,32 @@ const BackgroundCards = styled.div`
 const BackgroundCard = styled.div`
   // background: linear-gradient(135deg, rgba(58, 58, 76, 0.6) 0%, rgba(42, 42, 60, 0.6) 100%);
   border-radius: 15px;
-  padding: 2rem;
+  padding: 32px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 1rem;
-  width: 250px;
-  height: 250px;
+  margin: 16px;
+  width: 100px;
+  height: 100px;
   justify-content: center;
   animation: ${float} 6s ease-in-out infinite;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   opacity: 0.8;
 
   @media (max-width: 480px) {
-    width: 150px;
-    height: 150px;
-    padding: 1rem;
+    width: 100px;
+    height: 100px;
+    padding: 10px;
   }
 `;
 
 const IconWrapper = styled.div`
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
+  font-size: 25px;
+  margin-bottom: 10px;
   color: #0066cc;
 
   @media (max-width: 480px) {
-    font-size: 2.5rem;
+    font-size: 20px;
   }
 `;
 const LineBreakContainer = styled.div`
@@ -134,7 +134,8 @@ const LineBreakContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin: 2rem 0;
+  margin-top: 32px;
+  margin-bottom: 32px;
 `;
 const LineBreak = styled.div`
   height: 2px;
@@ -159,12 +160,12 @@ const LineBreak = styled.div`
 `;
 
 const CardTitle = styled.h3`
-  font-size: 1.5rem;
+  font-size: 10px;
   color: #ffffff;
   text-align: center;
 
   @media (max-width: 480px) {
-    font-size: 1rem;
+    font-size: 16px;
   }
 `;
 
@@ -172,7 +173,8 @@ const HeroContentWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 70%;
+  margin-top: 30px;
   padding: 0 5%;
   position: relative;
   z-index: 1;
@@ -185,8 +187,8 @@ const HeroContent = styled.div`
 `;
 
 const HeroTitle = styled.h1`
-  font-size: 4rem;
-  margin-bottom: 1rem;
+  font-size: 30px;
+  margin-bottom: 16px;
   background: linear-gradient(135deg, rgba(255, 0, 193, 0.8) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(0, 191, 255, 0.8) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -195,17 +197,17 @@ const HeroTitle = styled.h1`
   font-weight: bold;
 
   @media (max-width: 768px) {
-    font-size: 3rem;
+    font-size: 23px;
   }
 
   @media (max-width: 480px) {
-    font-size: 2rem;
+    font-size: 20px;
   }
 `;
 
 const HeroSubtitle = styled.p`
-  font-size: 1.75rem;
-  margin-bottom: 2rem;
+  font-size: 18px;
+  margin-bottom: 32px;
   opacity: 0.9;
   background: linear-gradient(135deg, rgba(255, 0, 193, 0.8) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(0, 191, 255, 0.8) 100%);
   -webkit-background-clip: text;
@@ -214,11 +216,11 @@ const HeroSubtitle = styled.p`
   text-fill-color: transparent;
 
   @media (max-width: 768px) {
-    font-size: 1.5rem;
+    font-size: 17px;
   }
 
   @media (max-width: 480px) {
-    font-size: 1rem;
+    font-size: 14px;
   }
 `;
 
@@ -234,8 +236,8 @@ const HeroButton = styled.button`
   background-size: 200% 200%;
   color: white;
   border: none;
-  padding: 1rem 2rem;
-  font-size: 1.25rem;
+  padding: 16px 32px;
+  font-size: 18px;
   cursor: pointer;
   transition: all 0.3s ease;
   border-radius: 25px;
@@ -248,8 +250,8 @@ const HeroButton = styled.button`
   }
 
   @media (max-width: 480px) {
-    font-size: 1rem;
-    padding: 0.75rem 1.5rem;
+    font-size: 15px;
+    padding: 12px 24px;
   }
 `;
 

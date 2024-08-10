@@ -80,7 +80,7 @@ const CardWrapper = styled.div`
   border-radius: 16px;
   border: 1px solid rgb(87, 60, 125);
   box-shadow: none;
-  padding: 2rem;
+  padding: 32px;
   width: ${props => props.$isHovered ? '720px' : props.$otherHovered ? '680px' : '700px'};
   height: 500px;
   position: center;
@@ -100,13 +100,13 @@ const CardWrapper = styled.div`
 
   @media (max-width: 768px) {
     width: 500px;
-    padding: 1.5rem;
+    padding: 24px;
   }
 
   @media (max-width: 480px) {
     width: 300px;
     height: 450px;
-    padding: 1rem;
+    padding: 16px;
     margin-left: -30px;
     margin-bottom: 10px;
   }
@@ -158,50 +158,50 @@ const NavButton = styled.button`
   }
 `;
 const TextSection = styled.div`
-  margin-top: 1rem;
+  margin-top: 16px;
   text-align: center;
-  padding: 0 1rem;
+  padding: 0 16px;
 
   @media (max-width: 768px) {
-    margin-top: 0.75rem;
-    padding: 0 0.75rem;
+    margin-top: 12px;
+    padding: 0 12px;
   }
 
   @media (max-width: 480px) {
-    margin-top: 0.5rem;
-    padding: 0 0.5rem;
+    margin-top: 8px;
+    padding: 0 8px;
   }
 `;
 
 const Title = styled.h2`
-  font-size: 1.8rem;
+  font-size: 28px;
   font-family: 'Orbitron', sans-serif;
   background: linear-gradient(135deg, rgba(255, 0, 193, 0.8) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(0, 191, 255, 0.8) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
   
   @media (max-width: 768px) {
-    font-size: 1.5rem;
+    font-size: 24px;
   }
 
   @media (max-width: 480px) {
-    font-size: 1rem;
+    font-size: 16px;
   }
 `;
 
 const Subtitle = styled.p`
-  font-size: 1rem;
+  font-size: 16px;
   font-family: 'Roboto', sans-serif;
   color: rgba(255, 255, 255, 0.8);
   line-height: 1.4;
   
   @media (max-width: 768px) {
-    font-size: 0.9rem;
+    font-size: 14px;
   }
 
   @media (max-width: 480px) {
-    font-size: 0.5rem;
+    font-size: 8px;
     text-align: center;
   }
 `;

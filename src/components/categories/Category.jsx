@@ -19,24 +19,24 @@ const CategoryWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem;
-  gap: 2rem;
+  padding: 32px;
+  gap: 32px;
   animation: ${fadeIn} 1s ease-out;
 
   @media (max-width: 768px) {
-    padding: 1.5rem;
+    padding: 24px;
   }
 
   @media (max-width: 480px) {
-    padding: 1rem;
-    gap: 1rem;
+    padding: 16px;
+    gap: 16px;
   }
 `;
 
 const ContentWrapper = styled.div`
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 32px;
   animation: ${fadeIn} 1s ease-out;
 
   @media (max-width: 1024px) {
@@ -45,11 +45,11 @@ const ContentWrapper = styled.div`
   }
 
   @media (max-width: 768px) {
-    gap: 1.5rem;
+    gap: 24px;
   }
 
   @media (max-width: 480px) {
-    gap: 0.5rem;
+    gap: 8px;
     margin-left: -15px;
 
   }
@@ -62,11 +62,11 @@ const ImageContainer = styled.div`
 
   @media (max-width: 1024px) {
     max-width: 100%;
-    margin-bottom: 1.5rem;
+    margin-bottom: 24px;
   }
 
   @media (max-width: 480px) {
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
     margin-left: -20ppx;
     
   }
@@ -116,8 +116,8 @@ const ContentContainer = styled.div`
 `;
 
 const Title = styled.h2`
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
+  font-size: 48px;
+  margin-bottom: 24px;
   font-family: 'Orbitron', sans-serif;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   background: linear-gradient(135deg, #ff00c1, #00bfff);
@@ -126,22 +126,22 @@ const Title = styled.h2`
   text-align: center;
 
   @media (max-width: 1024px) {
-    font-size: 2.5rem;
+    font-size: 40px;
   }
 
   @media (max-width: 768px) {
-    font-size: 2.3rem;
+    font-size: 36px;
   }
 
   @media (max-width: 480px) {
     font-size: 17px;
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
   }
 `;
 
 const Description = styled.p`
-  font-size: 1.3rem;
-  margin-bottom: 1.5rem;
+  font-size: 20px;
+  margin-bottom: 24px;
   font-family: 'Roboto', sans-serif;
   line-height: 1.6;
   max-width: 600px;
@@ -154,16 +154,16 @@ const Description = styled.p`
   margin-right: auto;
 
   @media (max-width: 1024px) {
-    font-size: 1.2rem;
+    font-size: 19px;
   }
 
   @media (max-width: 768px) {
-    font-size: 1.1rem;
+    font-size: 17px;
   }
 
   @media (max-width: 480px) {
     font-size: 13px;
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
   }
 `;
 
@@ -179,15 +179,15 @@ const LineBreakWrapper = styled.div`
   align-items: flex-start;
   width: 100%;
   max-width: 800px;
-  margin: 3rem 0;
+  margin: 48px 0;
   animation: ${fadeIn} 1s ease-out 0.7s both;
 
   @media (max-width: 768px) {
-    margin: 2.5rem 0;
+    margin: 40px 0;
   }
 
   @media (max-width: 480px) {
-    margin: 2rem 0;
+    margin: 32px 0;
   }
 `;
 
@@ -207,11 +207,11 @@ const LineBreak = styled.div`
   }
 
   &::before {
-    margin-right: 0.7em;
+    margin-right: 11px;
   }
 
   &::after {
-    margin-left: 0.7em;
+    margin-left: 11px;
   }
 
   @media (max-width: 768px) {
@@ -232,16 +232,16 @@ const LineBreak = styled.div`
 const LineBreakText = styled.span`
   color: white;
   padding: 0 15px;
-  font-size: 1.2rem;
+  font-size: 19px;
   font-weight: bold;
   text-transform: uppercase;
 
   @media (max-width: 768px) {
-    font-size: 1.1rem;
+    font-size: 17px;
   }
 
   @media (max-width: 480px) {
-    font-size: 1rem;
+    font-size: 16px;
   }
 `;
 
@@ -250,20 +250,20 @@ const AppList = styled.ul`
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.8rem;
+  gap: 12px;
   justify-content: center;
   animation: ${fadeIn} 1s ease-out 0.9s both;
 
   @media (max-width: 1024px) {
-    gap: 0.7rem;
+    gap: 11px;
   }
 
   @media (max-width: 768px) {
-    gap: 0.6rem;
+    gap: 9px;
   }
 
   @media (max-width: 480px) {
-    gap: 0.4rem;
+    gap: 6px;
     font-size: 10px;
     margin-left: -15px;
     // font-size: 10px;
@@ -282,27 +282,27 @@ const AppList = styled.ul`
 //     rgba(0, 191, 255, 0.8) 80%, 
 //     rgba(0, 191, 255, 0) 100%
 //   );
-//   margin-bottom: 3rem;
+//   margin-bottom: 48px;
 //   animation: ${fadeIn} 1s ease-out;
 
 //   @media (max-width: 1024px) {
-//     margin-bottom: 2.5rem;
+//     margin-bottom: 40px;
 //   }
 
 //   @media (max-width: 768px) {
-//     margin-bottom: 2rem;
+//     margin-bottom: 32px;
 //   }
 
 //   @media (max-width: 480px) {
-//     margin-bottom: 1.5rem;
+//     margin-bottom: 24px;
 //   }
 // `;
 
 const AppItem = styled.li`
   background-color: rgba(87, 60, 125, 0.5);
-  padding: 0.6rem 1.2rem;
+  padding: 9px 19px;
   border-radius: 20px;
-  font-size: 1.1rem;
+  font-size: 17px;
   color: #fff;
   transition: all 0.3s ease;
 
@@ -312,18 +312,18 @@ const AppItem = styled.li`
   }
 
   @media (max-width: 1024px) {
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
+    font-size: 16px;
+    padding: 8px 16px;
   }
 
   @media (max-width: 768px) {
-    font-size: 0.95rem;
-    padding: 0.45rem 0.9rem;
+    font-size: 15px;
+    padding: 7px 14px;
   }
 
   @media (max-width: 480px) {
-    font-size: 0.9rem;
-    padding: 0.4rem 0.8rem;
+    font-size: 14px;
+    padding: 6px 12px;
   }
 `;
 

@@ -32,7 +32,7 @@ const SocialCardWrapper = styled.footer`
   justify-content: center;
   align-items: center;
   height: 70px; 
-  padding: 0 1rem;
+  padding: 0 16px;
   position: fixed;
   bottom: 20px; 
   left: 0;
@@ -50,7 +50,7 @@ const SocialCardWrapper = styled.footer`
 
   @media (max-width: 480px) {
     max-width: 70%; 
-    padding: 0 0.5rem;
+    padding: 0 8px;
   }
 `;
 
@@ -68,17 +68,17 @@ const SocialCardContent = styled.div`
 
 const SocialCardIcons = styled.div`
   display: flex;
-  gap: 1rem;
+  gap: 16px;
   align-items: center;
 
   @media (max-width: 480px) {
-    gap: 0.5rem;
+    gap: 8px;
   }
 `;
 
 const SocialCardIcon = styled.a`
   color: gray;
-  font-size: 2rem; 
+  font-size: 32px; 
   transition: color 0.3s ease, transform 0.3s ease-in-out;
   display: flex;
   align-items: center;
@@ -90,16 +90,16 @@ const SocialCardIcon = styled.a`
   }
 
   @media (max-width: 480px) {
-    font-size: 1.5rem;
+    font-size: 24px;
   }
 `;
 
 const Link = styled(SocialCardIcon)`
-  font-size: 1.5rem;
+  font-size: 24px;
   text-decoration: none;
 
   @media (max-width: 480px) {
-    font-size: 1.2rem;
+    font-size: 19px;
   }
 `;
 

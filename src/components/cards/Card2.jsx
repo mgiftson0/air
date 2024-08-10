@@ -27,7 +27,7 @@ const CardWrapper = styled.div`
   border-radius: 25px;
   border: 1px solid rgb(87, 60, 125);
   box-shadow: none;
-  padding: 2rem;
+  padding: 32px;
   width: ${props => props.$isHovered ? '720px' : props.$otherHovered ? '680px' : '700px'};
   height: 500px;
   position: relative;
@@ -48,13 +48,13 @@ const CardWrapper = styled.div`
 
   @media (max-width: 768px) {
     width: 500px;
-    padding: 1.5rem;
+    padding: 24px;
   }
 
   @media (max-width: 480px) {
     width: 300px;
     height: 500px;
-    padding: 1rem;
+    padding: 16px;
     margin-left: -30px;
 
   }
@@ -84,7 +84,7 @@ const CarouselCard = styled.div`
   width: 200px;
   height: 300px;
   border: 1px solid rgb(191, 150, 250);
-  margin-right: 1rem;
+  margin-right: 16px;
   background-color: transparent;
   border-radius: 30px;
   box-shadow: rgb(87, 60, 125) 0px 0px 40px 1px inset, rgba(181, 133, 249, 0.27) 0px 0px 64px 20px;
@@ -94,7 +94,7 @@ const CarouselCard = styled.div`
   align-items: center;
   justify-content: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease, width 0.3s ease;
-  padding: 1rem;
+  padding: 16px;
   animation: ${floatAnimation} 3s ease-in-out infinite;
 
   &:hover {
@@ -110,8 +110,8 @@ const CarouselCard = styled.div`
   @media (max-width: 768px) {
     width: 180px;
     height: 270px;
-    margin-right: 0.75rem;
-    padding: 0.75rem;
+    margin-right: 12px;
+    padding: 12px;
 
     &:hover {
       width: 200px;
@@ -125,8 +125,8 @@ const CarouselCard = styled.div`
   @media (max-width: 480px) {
     width: 150px;
     height: 200px;
-    margin-right: 0.5rem;
-    padding: 0.5rem;
+    margin-right: 8px;
+    padding: 8px;
 
     &:hover {
       width: 170px;
@@ -139,98 +139,98 @@ const CarouselCard = styled.div`
 `;
 
 const IconWrapper = styled.div`
-  margin-bottom: 1rem;
-  font-size: 2rem;
+  margin-bottom: 16px;
+  font-size: 32px;
   color: #00FFFF;
 
   @media (max-width: 768px) {
-    font-size: 1.5rem;
+    font-size: 24px;
   }
 
   @media (max-width: 480px) {
-    font-size: 3rem;
+    font-size: 48px;
   }
 `;
 
 const CardTitle = styled.h3`
-  font-size: 1.2rem;
+  font-size: 19px;
   color: white;
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
   text-align: center;
 
   @media (max-width: 768px) {
-    font-size: 1.1rem;
+    font-size: 18px;
   }
 
   @media (max-width: 480px) {
-    font-size: 0.8rem;
+    font-size: 13px;
   }
 `;
 
 const CardDescription = styled.p`
-  font-size: 0.9rem;
+  font-size: 14px;
   color: rgba(255, 255, 255, 0.8);
   text-align: center;
 
   @media (max-width: 768px) {
-    font-size: 0.8rem;
+    font-size: 13px;
   }
 
   @media (max-width: 480px) {
-    font-size: 0.5rem;
+    font-size: 8px;
   }
 `;
 
 const TextSection = styled.div`
-  margin-top: 2rem;
+  margin-top: 32px;
   text-align: center;
-  padding: 0 1rem;
+  padding: 0 16px;
   opacity: 0;
   animation: ${fadeIn} 1s forwards;
   animation-delay: 0.5s;
 
   @media (max-width: 768px) {
-    margin-top: 1.5rem;
-    padding: 0 0.75rem;
+    margin-top: 24px;
+    padding: 0 12px;
   }
 
   @media (max-width: 480px) {
-    margin-top: 1rem;
-    padding: 0 0.5rem;
+    margin-top: 16px;
+    padding: 0 8px;
   }
 `;
  
 const Title = styled.h2`
-  font-size: 2rem;
+  font-size: 32px;
   font-family: 'Orbitron', sans-serif;
   background: linear-gradient(135deg, rgba(255, 0, 193, 0.8) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(0, 191, 255, 0.8) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 0.75rem;
+  margin-bottom: 12px;
   margin-top: 20px;
   
   @media (max-width: 768px) {
-    font-size: 1.75rem;
+    font-size: 28px;
   }
 
   @media (max-width: 480px) {
-    font-size: 1rem;
+    font-size: 16px;
   }
 `;
 
 const Subtitle = styled.p`
-  font-size: 1.1rem;
+  font-size: 18px;
   font-family: 'Roboto', sans-serif;
   color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 1.25rem;
+  margin-bottom: 20px;
   line-height: 1.5;
   
   @media (max-width: 768px) {
-    font-size: 1rem;
+    font-size: 16px;
   }
 
   @media (max-width: 480px) {
-    font-size: 0.7rem;
+    font-size: 11px;
   }
 `;
 

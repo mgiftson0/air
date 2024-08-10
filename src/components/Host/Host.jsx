@@ -7,7 +7,7 @@ const HostSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4rem 2rem;
+  padding: 64px 32px;
 `;
 
 const LineBreak = styled.hr`
@@ -22,13 +22,13 @@ const LineBreak = styled.hr`
     rgba(0, 191, 255, 0.8) 80%, 
     rgba(0, 191, 255, 0) 100%
   );
-  margin-bottom: 3rem;
+  margin-bottom: 48px;
 `;
 
 const Header = styled.h2`
-  font-size: 2.5rem;
+  font-size: 40px;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 48px;
   color: white;
   font-family: 'Orbitron', sans-serif;
   background: linear-gradient(135deg, rgba(255, 0, 193, 0.8) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(0, 191, 255, 0.8) 100%);
@@ -36,7 +36,7 @@ const Header = styled.h2`
   -webkit-text-fill-color: transparent;
 
   @media (max-width: 768px) {
-    font-size: 2rem;
+    font-size: 32px;
   }
 
   @media (max-width: 480px) {
@@ -48,7 +48,7 @@ const Header = styled.h2`
 const ImageContainer = styled.div`
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 32px;
   width: 95%;
   max-width: 1200px;
 
@@ -71,7 +71,7 @@ const StyledImage = styled.img`
 
   @media (max-width: 768px) {
     width: 80%;
-    margin-bottom: 2rem;
+    margin-bottom: 32px;
   }
 
   @media (max-width: 480px) {

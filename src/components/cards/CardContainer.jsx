@@ -18,10 +18,10 @@ const CardContainer = () => {
 const CardContainerWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  gap: 2rem;
+  gap: 32px;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 32px;
   margin-top: 50px;
   margin-left: -50px;
   overflow: hidden;
@@ -30,8 +30,8 @@ const CardContainerWrapper = styled.div`
   width: 100%;
 
   @media (max-width: 1200px) {
-    gap: 1.5rem;
-    padding: 1.5rem;
+    gap: 24px;
+    padding: 24px;
     margin-top: 40px;
     margin-left: -40px;
   }
@@ -40,7 +40,7 @@ const CardContainerWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 1rem;
+    padding: 16px;
     margin-top: 30px;
     margin-left: -30px;
   }
@@ -48,10 +48,10 @@ const CardContainerWrapper = styled.div`
   @media (max-width: 480px) {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 32px;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    padding: 16px;
     margin-left: -10px;
   }
 
