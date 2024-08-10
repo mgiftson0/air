@@ -27,7 +27,7 @@ const Card1 = ({ className, hoveredCard, setHoveredCard }) => {
       ScrollReveal().reveal(cardRef.current, {
         delay: 200,
         distance: '20px',
-        duration: 1000,
+        duration: 400,
         easing: 'ease-in-out',
         origin: 'bottom',
         reset: true
@@ -126,8 +126,8 @@ const ImageContainer = styled.div`
 `;
 
 const Image = styled.img`
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 160px;
+  max-height: 100px;
   object-fit: contain;
   border-radius: 15px;
   border: 2px solid rgb(87, 60, 125);
