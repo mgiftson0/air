@@ -76,7 +76,7 @@ const StyledImage = styled.img`
 
   @media (max-width: 480px) {
     width: 350px;
-    margin-left: -20px;
+    margin-left: -30px;
   }
 `;
 

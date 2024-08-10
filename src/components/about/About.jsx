@@ -8,7 +8,7 @@ const About = () => {
       <Header>
         Browse Autonomous AI Agents
         <Subtitle>
-          Browse the marketplace for individual agents or pre-built agent teams curated by our community.
+         marketplace for individual agents or pre-built agent teams curated by our community.
         </Subtitle>
       </Header>
       <CardContainerWrapper>
