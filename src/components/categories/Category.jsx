@@ -49,7 +49,9 @@ const ContentWrapper = styled.div`
   }
 
   @media (max-width: 480px) {
-    gap: 1rem;
+    gap: 0.5rem;
+    margin-left: -15px;
+
   }
 `;
 
@@ -65,18 +67,46 @@ const ImageContainer = styled.div`
 
   @media (max-width: 480px) {
     margin-bottom: 1rem;
+    margin-left: -20ppx;
+    
   }
 `;
 
 const Image = styled.img`
-  width: 100%;
+  width: 400px;
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  align-self: flex-start;
+  margin-right: auto;
+
 
   &:hover {
     transform: scale(1.05);
+  }
+
+  @media (max-width: 1024px) {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 95%;
+    border-radius: 8px;
+    width: 350px;
+  }
+
+  @media (max-width: 480px) {
+    max-width: 300px;
+    margin-left: -10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      transform: none;
+    }
   }
 `;
 
@@ -104,7 +134,7 @@ const Title = styled.h2`
   }
 
   @media (max-width: 480px) {
-    font-size: 2rem;
+    font-size: 17px;
     margin-bottom: 1rem;
   }
 `;
@@ -132,7 +162,7 @@ const Description = styled.p`
   }
 
   @media (max-width: 480px) {
-    font-size: 1rem;
+    font-size: 13px;
     margin-bottom: 1rem;
   }
 `;
@@ -233,37 +263,40 @@ const AppList = styled.ul`
   }
 
   @media (max-width: 480px) {
-    gap: 0.5rem;
+    gap: 0.4rem;
+    font-size: 10px;
+    margin-left: -15px;
+    // font-size: 10px;
   }
 `;
 
-const LineBreak2 = styled.hr`
-  width: 80%;
-  max-width: 600px;
-  border: none;
-  height: 2px;
-  background: linear-gradient(90deg, 
-    rgba(255, 0, 193, 0) 0%, 
-    rgba(255, 0, 193, 0.8) 20%, 
-    rgba(255, 255, 255, 0.8) 50%, 
-    rgba(0, 191, 255, 0.8) 80%, 
-    rgba(0, 191, 255, 0) 100%
-  );
-  margin-bottom: 3rem;
-  animation: ${fadeIn} 1s ease-out;
+// const LineBreak2 = styled.hr`
+//   width: 80%;
+//   max-width: 600px;
+//   border: none;
+//   height: 2px;
+//   background: linear-gradient(90deg, 
+//     rgba(255, 0, 193, 0) 0%, 
+//     rgba(255, 0, 193, 0.8) 20%, 
+//     rgba(255, 255, 255, 0.8) 50%, 
+//     rgba(0, 191, 255, 0.8) 80%, 
+//     rgba(0, 191, 255, 0) 100%
+//   );
+//   margin-bottom: 3rem;
+//   animation: ${fadeIn} 1s ease-out;
 
-  @media (max-width: 1024px) {
-    margin-bottom: 2.5rem;
-  }
+//   @media (max-width: 1024px) {
+//     margin-bottom: 2.5rem;
+//   }
 
-  @media (max-width: 768px) {
-    margin-bottom: 2rem;
-  }
+//   @media (max-width: 768px) {
+//     margin-bottom: 2rem;
+//   }
 
-  @media (max-width: 480px) {
-    margin-bottom: 1.5rem;
-  }
-`;
+//   @media (max-width: 480px) {
+//     margin-bottom: 1.5rem;
+//   }
+// `;
 
 const AppItem = styled.li`
   background-color: rgba(87, 60, 125, 0.5);
@@ -307,12 +340,12 @@ const Category = () => {
       reset: true
     });
 
-    sr.reveal(categoryRef.current.children, { interval: 200 });
+    sr.reveal(categoryRef.current.children, { interval: 100 });
   }, []);
 
   return (
+    
     <CategoryWrapper ref={categoryRef}>
-      <LineBreak2 />
       <ContentWrapper>
         <ImageContainer>
           <Image src={image1} alt="Integrated Apps" />

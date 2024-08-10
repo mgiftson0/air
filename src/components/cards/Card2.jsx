@@ -52,9 +52,11 @@ const CardWrapper = styled.div`
   }
 
   @media (max-width: 480px) {
-    width: 330px;
+    width: 300px;
     height: 500px;
     padding: 1rem;
+    margin-left: -30px;
+
   }
 `;
 
@@ -70,6 +72,10 @@ const Carousel = styled.div`
   
   &:hover {
     box-shadow: rgb(87, 60, 125) 0px 0px 40px 1px , rgba(181, 133, 249, 0.27) 0px 0px 64px 20px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 5px;
   }
 `;
 
@@ -100,12 +106,50 @@ const CarouselCard = styled.div`
   &:hover ~ & {
     width: 180px;
   }
+
+  @media (max-width: 768px) {
+    width: 180px;
+    height: 270px;
+    margin-right: 0.75rem;
+    padding: 0.75rem;
+
+    &:hover {
+      width: 200px;
+    }
+
+    &:hover ~ & {
+      width: 160px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    width: 150px;
+    height: 200px;
+    margin-right: 0.5rem;
+    padding: 0.5rem;
+
+    &:hover {
+      width: 170px;
+    }
+
+    &:hover ~ & {
+      width: 130px;
+    }
+  }
 `;
 
 const IconWrapper = styled.div`
   margin-bottom: 1rem;
-  font-size: 4rem;
+  font-size: 2rem;
   color: #00FFFF;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 3rem;
+  }
 `;
 
 const CardTitle = styled.h3`
@@ -113,12 +157,28 @@ const CardTitle = styled.h3`
   color: white;
   margin-bottom: 0.5rem;
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+  }
 `;
 
 const CardDescription = styled.p`
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.8);
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.5rem;
+  }
 `;
 
 const TextSection = styled.div`
@@ -128,6 +188,16 @@ const TextSection = styled.div`
   opacity: 0;
   animation: ${fadeIn} 1s forwards;
   animation-delay: 0.5s;
+
+  @media (max-width: 768px) {
+    margin-top: 1.5rem;
+    padding: 0 0.75rem;
+  }
+
+  @media (max-width: 480px) {
+    margin-top: 1rem;
+    padding: 0 0.5rem;
+  }
 `;
  
 const Title = styled.h2`
@@ -144,7 +214,7 @@ const Title = styled.h2`
   }
 
   @media (max-width: 480px) {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 `;
 
@@ -160,7 +230,7 @@ const Subtitle = styled.p`
   }
 
   @media (max-width: 480px) {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
   }
 `;
 
@@ -170,6 +240,7 @@ const SvgContainer = styled.div`
   right: 10px;
   width: 50px;
   height: 50px;
+  display: none;
 `;
 
 const Card2 = ({ className, hoveredCard, setHoveredCard, delay = '0s' }) => {

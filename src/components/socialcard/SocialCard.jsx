@@ -60,12 +60,20 @@ const SocialCardContent = styled.div`
   align-items: center;
   text-align: center;
   width: 100%; 
+
+  @media (max-width: 480px) {
+    width: 90%;
+  }
 `;
 
 const SocialCardIcons = styled.div`
   display: flex;
   gap: 1rem;
   align-items: center;
+
+  @media (max-width: 480px) {
+    gap: 0.5rem;
+  }
 `;
 
 const SocialCardIcon = styled.a`
@@ -80,11 +88,19 @@ const SocialCardIcon = styled.a`
     color: white;
     transform: scale(1.2);
   }
+
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const Link = styled(SocialCardIcon)`
   font-size: 1.5rem;
   text-decoration: none;
+
+  @media (max-width: 480px) {
+    font-size: 1.2rem;
+  }
 `;
 
 export default SocialCard;

@@ -40,7 +40,8 @@ const Header = styled.h2`
   }
 
   @media (max-width: 480px) {
-    font-size: 1.5rem;
+    font-size: 19px;
+    margin-left: -10px;
   }
 `;
 
@@ -74,7 +75,8 @@ const StyledImage = styled.img`
   }
 
   @media (max-width: 480px) {
-    width: 100%;
+    width: 350px;
+    margin-left: -20px;
   }
 `;
 

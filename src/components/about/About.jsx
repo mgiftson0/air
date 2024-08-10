@@ -45,7 +45,7 @@ const Header = styled.h1`
   background: linear-gradient(135deg, rgba(255, 0, 193, 0.8) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(0, 191, 255, 0.8) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 2rem;
   text-align: center;
 
@@ -58,8 +58,10 @@ const Header = styled.h1`
   }
 
   @media (max-width: 480px) {
-    font-size: 1.5rem;
+    font-size: 15px;
     white-space: pre-line;
+    margin-left: -30px;
+
     &::after {
       content: '\A';
     }
@@ -67,7 +69,7 @@ const Header = styled.h1`
 `;
 
 const Subtitle = styled.p`
-  font-size: 1.25rem;
+  font-size: 19px;
   color: white;
   margin-bottom: 2rem;
   text-align: center;
@@ -81,8 +83,10 @@ const Subtitle = styled.p`
   }
 
   @media (max-width: 480px) {
-    font-size: 0.875rem;
+    font-size: 10px;
     margin-bottom: 1rem;
+    text-align: center;
+    margin-left: -30px;
   }
 `;
 

@@ -83,7 +83,7 @@ const CardWrapper = styled.div`
   padding: 2rem;
   width: ${props => props.$isHovered ? '720px' : props.$otherHovered ? '680px' : '700px'};
   height: 500px;
-  position: relative;
+  position: center;
   transition: all 0.3s ease;
   opacity: 0;
   animation: ${fadeIn} 1s forwards;
@@ -104,9 +104,11 @@ const CardWrapper = styled.div`
   }
 
   @media (max-width: 480px) {
-    width: 330px;
-    height: 500px;
+    width: 300px;
+    height: 450px;
     padding: 1rem;
+    margin-left: -30px;
+    margin-bottom: 10px;
   }
 `;
 
@@ -117,6 +119,10 @@ const ImageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 480px) {
+    height: 60%;
+  }
 `;
 
 const Image = styled.img`
@@ -125,6 +131,13 @@ const Image = styled.img`
   object-fit: contain;
   border-radius: 15px;
   border: 2px solid rgb(87, 60, 125);
+
+  @media (max-width: 480px) {
+    max-width: 95%;
+    max-height: 95%;
+    border-radius: 10px;
+    margin-top: -120px;
+  }
 `;
 
 const NavButton = styled.button`
@@ -144,11 +157,20 @@ const NavButton = styled.button`
     background-color: rgba(0, 0, 0, 0.7);
   }
 `;
-
 const TextSection = styled.div`
   margin-top: 1rem;
   text-align: center;
   padding: 0 1rem;
+
+  @media (max-width: 768px) {
+    margin-top: 0.75rem;
+    padding: 0 0.75rem;
+  }
+
+  @media (max-width: 480px) {
+    margin-top: 0.5rem;
+    padding: 0 0.5rem;
+  }
 `;
 
 const Title = styled.h2`
@@ -164,7 +186,7 @@ const Title = styled.h2`
   }
 
   @media (max-width: 480px) {
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
 `;
 
@@ -179,7 +201,8 @@ const Subtitle = styled.p`
   }
 
   @media (max-width: 480px) {
-    font-size: 0.8rem;
+    font-size: 0.5rem;
+    text-align: center;
   }
 `;
 

@@ -54,6 +54,7 @@ const Copyright = styled.p`
   text-align: center;
   width: 100%;
   color: rgba(255, 255, 255, 0.7);
+  
 `;
 
 const Link = styled.a`
@@ -71,8 +72,8 @@ const Footer = () => {
   return (
     <FooterContainer>
       <FooterContent>
-        <h3>Our Company</h3>
-        <p>We provide innovative solutions for your business needs.</p>
+        <h3>Air</h3>
+        <p>innovative solutions for your business needs.</p>
       </FooterContent>
       <SocialIcons>
         <SocialIcon href="https://github.com/mgiftson0" target="_blank" rel="noopener noreferrer">

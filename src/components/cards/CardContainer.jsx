@@ -52,8 +52,7 @@ const CardContainerWrapper = styled.div`
     align-items: center;
     justify-content: center;
     padding: 1rem;
-    margin-top: 150px;
-    margin-left: 0;
+    margin-left: -10px;
   }
 
   & > * {
