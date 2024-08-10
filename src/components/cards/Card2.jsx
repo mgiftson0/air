@@ -28,7 +28,7 @@ const CardWrapper = styled.div`
   border: 1px solid rgb(87, 60, 125);
   box-shadow: none;
   padding: 20px;
-  width: 400px;
+  width: 450px;
   height: auto;
   min-height: 500px;
   position: relative;
@@ -44,12 +44,12 @@ const CardWrapper = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 300px;
+    width: 370px;
     padding: 15px;
   }
 
   @media (max-width: 480px) {
-    width: 280px;
+    width: 300px;
     padding: 10px;
   }
 `;

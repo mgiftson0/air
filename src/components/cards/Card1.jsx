@@ -18,7 +18,7 @@ const CardWrapper = styled.div`
   border: 1px solid rgb(87, 60, 125);
   box-shadow: none;
   padding: 20px;
-  width: 400px;
+  width: 450px;
   height: auto;
   min-height: 500px;
   position: relative;
@@ -33,12 +33,12 @@ const CardWrapper = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 300px;
+    width: 370px;
     padding: 15px;
   }
 
   @media (max-width: 480px) {
-    width: 280px;
+    width: 300px;
     padding: 10px;
   }
 `;
@@ -143,9 +143,9 @@ const Card1 = ({ className, hoveredCard, setHoveredCard }) => {
   const cardRef = useRef(null);
   const [currentImage, setCurrentImage] = useState(0);
   const images = [
-    '/src/assets/image2.jpg',
-    '/src/assets/image3.jpg',
-    '/src/assets/image4.jpg'
+    '/src/assets/image2.png',
+    '/src/assets/image3.png',
+    '/src/assets/image4.png'
   ];
 
   useEffect(() => {
