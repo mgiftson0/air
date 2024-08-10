@@ -2,6 +2,9 @@ import { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
 import ScrollReveal from 'scrollreveal';
+import image2 from '../../assets/image2.png';
+import image3 from '../../assets/image3.png';
+import image4 from '../../assets/image4.png';
 
 const fadeIn = keyframes`
   from {
@@ -21,6 +24,7 @@ const CardWrapper = styled.div`
   width: 450px;
   height: auto;
   min-height: 500px;
+  margin-left: 20px;
   position: relative;
   transition: all 0.3s ease;
   opacity: 0;
@@ -142,11 +146,7 @@ const Subtitle = styled.p`
 const Card1 = ({ className, hoveredCard, setHoveredCard }) => {
   const cardRef = useRef(null);
   const [currentImage, setCurrentImage] = useState(0);
-  const images = [
-    '/src/assets/image2.png',
-    '/src/assets/image3.png',
-    '/src/assets/image4.png'
-  ];
+  const images = [image2, image3, image4];
 
   useEffect(() => {
     if (cardRef.current) {

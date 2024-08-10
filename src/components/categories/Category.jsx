@@ -250,53 +250,24 @@ const AppList = styled.ul`
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 8px;
   justify-content: center;
   animation: ${fadeIn} 1s ease-out 0.9s both;
 
   @media (max-width: 1024px) {
-    gap: 11px;
+    gap: 7px;
   }
 
   @media (max-width: 768px) {
-    gap: 9px;
+    gap: 6px;
   }
 
   @media (max-width: 480px) {
-    gap: 6px;
-    font-size: 10px;
-    margin-left: -15px;
-    // font-size: 10px;
+    gap: 4px;
+    font-size: 9px;
+    margin-left: -10px;
   }
 `;
-
-// const LineBreak2 = styled.hr`
-//   width: 80%;
-//   max-width: 600px;
-//   border: none;
-//   height: 2px;
-//   background: linear-gradient(90deg, 
-//     rgba(255, 0, 193, 0) 0%, 
-//     rgba(255, 0, 193, 0.8) 20%, 
-//     rgba(255, 255, 255, 0.8) 50%, 
-//     rgba(0, 191, 255, 0.8) 80%, 
-//     rgba(0, 191, 255, 0) 100%
-//   );
-//   margin-bottom: 48px;
-//   animation: ${fadeIn} 1s ease-out;
-
-//   @media (max-width: 1024px) {
-//     margin-bottom: 40px;
-//   }
-
-//   @media (max-width: 768px) {
-//     margin-bottom: 32px;
-//   }
-
-//   @media (max-width: 480px) {
-//     margin-bottom: 24px;
-//   }
-// `;
 
 const AppItem = styled.li`
   background-color: rgba(87, 60, 125, 0.5);
@@ -335,12 +306,16 @@ const Category = () => {
       origin: 'bottom',
       distance: '20px',
       duration: 1000,
-      delay: 200,
+      delay: 100,
       easing: 'ease-out',
       reset: true
     });
 
-    sr.reveal(categoryRef.current.children, { interval: 100 });
+    sr.reveal(categoryRef.current.children, { 
+      interval: 100,
+      mobile: true,
+      viewFactor: 0.2
+    });
   }, []);
 
   return (

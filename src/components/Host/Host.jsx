@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
+import ScrollReveal from 'scrollreveal';
 import image6 from '../../assets/image6.png';
 import image7 from '../../assets/image7.png';
 
@@ -73,6 +74,7 @@ const StyledImage = styled.img`
   width: 450px;
   height: auto;
   border-radius: 15px;
+  gap: 20px;
   transition: all 0.3s ease-in-out;
   border: 2px solid rgba(255, 20, 213, 0.3);
 
@@ -95,13 +97,56 @@ const StyledImage = styled.img`
 
 const Host = () => {
   const [hoveredImage, setHoveredImage] = useState(null);
+  const sectionRef = useRef(null);
+  const headerRef = useRef(null);
+  const image1Ref = useRef(null);
+  const image2Ref = useRef(null);
+
+  useEffect(() => {
+    ScrollReveal().reveal(sectionRef.current, {
+      delay: 200,
+      distance: '20px',
+      duration: 500,
+      easing: 'ease-in-out',
+      origin: 'bottom',
+      reset: true
+    });
+
+    ScrollReveal().reveal(headerRef.current, {
+      delay: 400,
+      distance: '20px',
+      duration: 500,
+      easing: 'ease-in-out',
+      origin: 'top',
+      reset: true
+    });
+
+    ScrollReveal().reveal(image1Ref.current, {
+      delay: 600,
+      distance: '20px',
+      duration: 500,
+      easing: 'ease-in-out',
+      origin: 'left',
+      reset: true
+    });
+
+    ScrollReveal().reveal(image2Ref.current, {
+      delay: 800,
+      distance: '20px',
+      duration: 500,
+      easing: 'ease-in-out',
+      origin: 'right',
+      reset: true
+    });
+  }, []);
 
   return (
-    <HostSection>
+    <HostSection ref={sectionRef}>
       <LineBreak />
-      <Header>Host your own agents or create with us!</Header>
+      <Header ref={headerRef}>Host your own agents or create with us!</Header>
       <ImageContainer>
         <StyledImage
+          ref={image1Ref}
           $isHovered={hoveredImage === 'image6'}
           onMouseEnter={() => setHoveredImage('image6')}
           onMouseLeave={() => setHoveredImage(null)}
@@ -109,6 +154,7 @@ const Host = () => {
           alt="Host your own agents"
         />
         <StyledImage
+          ref={image2Ref}
           $isHovered={hoveredImage === 'image7'}
           onMouseEnter={() => setHoveredImage('image7')}
           onMouseLeave={() => setHoveredImage(null)}

@@ -30,6 +30,7 @@ const CardWrapper = styled.div`
   padding: 20px;
   width: 450px;
   height: auto;
+  margin-left: 20px;
   min-height: 500px;
   position: relative;
   transition: all 0.3s ease;

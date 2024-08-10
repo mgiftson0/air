@@ -101,8 +101,8 @@ const LineBreak = styled.hr`
   border: none;
   height: 2px;
   background: linear-gradient(90deg, rgba(255, 0, 193, 0) 0%, rgba(255, 0, 193, 0.8) 20%, rgba(255, 255, 255, 0.8) 50%, rgba(0, 191, 255, 0.8) 80%, rgba(0, 191, 255, 0) 100%);
-  margin-bottom: -48px;
-  // margin-top: 20px;
+  // margin-bottom: -48px;
+  margin-top: -50px;
 
   @media (max-width: 1200px) {
     width: 90%;
