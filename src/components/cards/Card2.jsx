@@ -27,9 +27,10 @@ const CardWrapper = styled.div`
   border-radius: 25px;
   border: 1px solid rgb(87, 60, 125);
   box-shadow: none;
-  padding: 10px;
-  width: ${props => props.$isHovered ? 'fit-content' : props.$otherHovered ? 'fit-content' : 'fit-content'};
-  height: 530px;
+  padding: 20px;
+  width: 350px;
+  height: auto;
+  min-height: 500px;
   position: relative;
   transition: all 0.3s ease;
   animation: ${fadeIn} 1s forwards;
@@ -42,28 +43,21 @@ const CardWrapper = styled.div`
     box-shadow: rgb(87, 60, 125) 0px 0px 40px 1px inset;
   }
 
-  @media (max-width: 1200px) {
-    width: fit-content;
-  }
-
   @media (max-width: 768px) {
-    width: fit-content;
+    width: 300px;
     padding: 15px;
   }
 
   @media (max-width: 480px) {
-    width: 300px;
-    height: 500px;
-    padding: 16px;
-    // margin-left: -30px;
-
+    width: 280px;
+    padding: 10px;
   }
 `;
 
 const Carousel = styled.div`
   display: flex;
   overflow-x: auto;
-  width: fit-content;
+  width: 100%;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   padding: 10px;
@@ -81,25 +75,18 @@ const Carousel = styled.div`
 
   @media (max-width: 480px) {
     padding: 3px;
-    width: 100%;
     border-radius: 15px;
-    margin-top: 40px;
-    padding-top: 10px;
-    
-    &:hover {
-      box-shadow: rgb(87, 60, 125) 0px 0px 20px 1px , rgba(181, 133, 249, 0.27) 0px 0px 32px 10px;
-    }
   }
 `;
 
 const CarouselCard = styled.div`
   flex: 0 0 auto;
-  width: 150px;
-  height: 300px;
+  width: 130px;
+  height: 250px;
   border: 1px solid rgb(191, 150, 250);
-  margin-right: 16px;
+  margin-right: 10px;
   background-color: transparent;
-  border-radius: 30px;
+  border-radius: 20px;
   box-shadow: rgb(87, 60, 125) 0px 0px 40px 1px inset, rgba(181, 133, 249, 0.27) 0px 0px 64px 20px;
   scroll-snap-align: start;
   display: flex;
@@ -107,62 +94,46 @@ const CarouselCard = styled.div`
   align-items: center;
   justify-content: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease, width 0.3s ease;
-  padding: 16px;
+  padding: 10px;
   animation: ${floatAnimation} 3s ease-in-out infinite;
 
   &:hover {
-    width: 220px;
+    width: 150px;
     border-color: rgba(255, 20, 213, 1);
     animation-play-state: paused;
   }
 
   &:hover ~ & {
-    width: 180px;
+    width: 130px;
   }
 
   @media (max-width: 768px) {
-    width: 180px;
-    height: 270px;
-    margin-right: 12px;
-    padding: 12px;
+    width: 120px;
+    height: 220px;
+    margin-right: 8px;
+    padding: 8px;
 
     &:hover {
-      width: 200px;
+      width: 140px;
     }
 
     &:hover ~ & {
-      width: 160px;
+      width: 120px;
     }
   }
 
   @media (max-width: 480px) {
     width: 100px;
     height: 200px;
-    margin-right: 8px;
-    padding: 8px;
-    overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
-
-    &::-webkit-scrollbar {
-      width: 6px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: rgba(255, 255, 255, 0.5);
-      border-radius: 3px;
-    }
-
-    &::-webkit-scrollbar-track {
-      background-color: transparent;
-    }
+    margin-right: 6px;
+    padding: 6px;
 
     &:hover {
       width: 110px;
     }
 
     &:hover ~ & {
-      width: 110px;
+      width: 100px;
     }
   }
 `;
@@ -177,7 +148,7 @@ const IconWrapper = styled.div`
   }
 
   @media (max-width: 480px) {
-    font-size: 48px;
+    font-size: 20px;
   }
 `;
 
@@ -189,11 +160,11 @@ const CardTitle = styled.h3`
   margin-top: 20px;
 
   @media (max-width: 768px) {
-    font-size: 18px;
+    font-size: 14px;
   }
 
   @media (max-width: 480px) {
-    font-size: 13px;
+    font-size: 12px;
   }
 `;
 
@@ -203,7 +174,7 @@ const CardDescription = styled.p`
   text-align: center;
   margin-top: 15px;
   @media (max-width: 768px) {
-    font-size: 11px;
+    font-size: 9px;
   }
 
   @media (max-width: 480px) {
@@ -260,7 +231,7 @@ const Subtitle = styled.p`
   }
 
   @media (max-width: 480px) {
-    font-size: 11px;
+    font-size: 14px;
   }
 `;
 
