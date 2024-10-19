@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import CardContainer from '../cards/CardContainer'; // Adjust path as necessary
+import CardContainer from '../cards/CardContainer'; 
 
 const About = () => {
   return (
