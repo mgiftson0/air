@@ -10,7 +10,6 @@ const LandingPage = () => {
   return (
     <PageWrapper>
       <Hero />
-      {/* We'll add other sections here as we create them */}
       {/* <Services /> */}
       <About />
       {/* <Contact /> */}
